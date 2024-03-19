@@ -4,7 +4,7 @@ task :default => :test
 # Packaging
 # ==========================================================
 
-GEMSPEC = eval(File.read('posix-spawn.gemspec'))
+GEMSPEC = eval(File.read('posix-spawn.gemspec'), binding, __FILE__, __LINE__)
 
 require 'rubygems/package_task'
 Gem::PackageTask.new(GEMSPEC) do |pkg|
